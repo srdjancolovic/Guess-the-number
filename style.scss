@@ -1,0 +1,149 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+    overflow-x: hidden;
+}
+body{
+    width: 100%;
+    height: 100vh;
+    background-image: url('img/rulet.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    position: relative;
+    &::after{
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        background-color: rgba(0,0,0,0.5);
+        z-index: -1000;
+    }
+}
+.heading{
+    margin-top: 100px;
+    text-align: center;
+    h1{
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+    p{
+        padding-top: 15px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+    h2{
+        display: inline-block;
+        font-size: 80px;
+        border: 3px solid white;
+        padding: 10px 30px;
+        margin-top: 30px;
+    }
+}
+.btn{
+    outline: none;
+    border: none;
+}
+.btn:focus{
+    display: none;
+    
+}
+.btn:active{
+    transform: translateY(3px);
+}
+.controls{
+    margin-top: 70px;
+     text-align: center;
+    .left{
+        display: block;
+        .guess{
+            width: 120px;
+            height: 50px;
+            text-align: center;
+            font-size: 45px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border: 2px solid white;
+            color: white;
+        }
+        .btn{
+            background-color: red;
+            margin-top: 15px;
+            width: 120px;
+            padding: 10px 20px;
+            font-size: 18px;
+            letter-spacing: 2px;
+            color: white;
+        }
+    }
+    .low-high-restart{
+        .message{
+            text-transform: uppercase;
+            font-size: 32px;
+        }
+        .btn{
+            background-color: red;
+            padding: 10px 20px;
+            text-transform: uppercase;
+            font-size: 18px;
+            width: 120px;
+            margin-top: 17px;
+            letter-spacing: 2px;
+            color: white;
+        }
+    }
+    .results{
+        text-transform: uppercase;
+    }
+}
+@media (max-width: 767.8px){
+    .controls{
+        .left{
+            text-align: center;
+        }
+        .results{
+            display: flex;
+            justify-content: space-between;
+            margin-top: 35px;
+        }
+    }
+}
+@media (max-width: 576px){
+    .heading{
+        margin-top: 70px;
+        h1{
+            font-size: 30px;
+        }
+        p{
+            font-size: 13px;
+        }
+    }
+    .controls{
+        .left{
+            display: flex;
+            justify-content: space-evenly;
+            .btn{
+                margin-top: 0;
+                font-size: 20px;
+            }
+        }
+        .low-high-restart{
+            margin-top: 30px;
+            .btn{
+                font-size: 20px;
+            }
+        }
+    }
+    .results{
+        padding: 0 20px;
+        h4{
+            font-size: 20px;
+        }
+    }
+
+}

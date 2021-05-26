@@ -1,0 +1,264 @@
+@import './variables.scss';
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    overflow-x: hidden;
+}
+body{
+    background-image: url('img/rulet.jpg');
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    &::after{
+        content: "";
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.5);
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: -1000;
+    }
+}
+.heading{
+    margin-top: 100px;
+    text-align: center;
+    h1{
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        font-size: 50px;
+        color: $colorHeadingsandP;
+    }
+    p{
+        padding-top: 20px;
+        font-size: 20px;
+        color: $colorHeadingsandP;
+    }
+    h2{
+        display: inline-block;
+        border: 3px solid white;
+        color: $colorHeadingsandP;
+        padding: 10px 30px;
+        font-size: 100px;
+        margin-top: 20px;
+    }
+}
+.controls{
+    margin-top: 60px;
+    position: relative;
+    .left{
+        margin-left: 50px;
+        .guess{
+            margin-top: -10px;
+            height: 80px;
+            width: 180px;
+            font-size: 60px;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.5);
+            border: 5px solid white;
+            color: white;
+            outline: none;
+        }
+        .input-label{
+            margin-top: 30px;
+            padding-left: 12px;
+            padding-bottom: 0;
+            text-transform: uppercase;
+            color: $colorHeadingsandP;
+        }
+        .btn{
+            display: inline-block;
+            background-color: rgba(0, 0, 0, 0.5);
+            border: 3px solid white;
+            color: white;
+            width: 140px;
+            height: 60px;
+            font-size: 30px;
+            margin-top: 20px;
+            margin-left: 20px;
+        }
+    }
+    .low-high-restart{
+        margin-top: 30px;
+        color: $colorHeadingsandP;
+        .message{
+            text-align: center;
+            padding-top: 0;
+            padding-left: 10px;
+        }
+        .btn{
+            display: inline-block;
+            background-color: rgba(0, 0, 0, 0.5);
+            border: 3px solid white;
+            color: white;
+            width: 150px;
+            text-align: center;
+            height: 60px;
+            font-size: 30px;
+            margin-left: 105px;
+            margin-top: 95px;
+            padding-left: 15px;
+            text-transform: uppercase;
+        }
+    }
+    .results{
+        padding-left: 130px;
+        margin-top: 30px;
+        color: white;
+        .label-score{
+            padding-right: 35px;
+            font-size: 28px;
+        }
+        .label-highscore{
+            font-size: 28px;
+        }
+    }
+}
+@media (max-width: 1200px){
+    .controls{
+        .left{
+            margin-left: 30px;
+        }
+        .low-high-restart{
+            .btn{
+                margin-left: 80px;
+            }
+        }
+        .results{
+            padding-left: 90px;
+        }
+    }
+}
+@media (max-width: 992px){
+    .controls{
+        .left{
+            margin-left: 0;
+        }
+        .low-high-restart{
+            .message{
+                padding-top: 0;
+                padding-left: 0;
+                padding-right: 0;
+                margin-left: 15px;
+            }
+            .btn{
+                margin-top: 95px;
+                margin-left: 40px;
+            }
+        }
+        .results{
+            margin-top: 0;
+            margin-left: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-left: 0;
+            padding-right: 0;
+            padding-top: 30px;  
+        }
+    }
+}
+@media (max-width: 767.9px){
+   .heading{
+       margin-top: 50px;
+       h1{
+           font-size: 40px;
+       }
+       p{
+           font-size: 18px;
+       }
+   }
+   .controls{
+       .left{
+        margin-left: -10px; 
+       }
+       .low-high-restart{
+           .message{
+               padding-top: 0;
+               padding-left: 90px;
+               margin-right: 0;
+           }
+           .btn{
+               margin-left: 95px;
+               margin-top: 90px;
+           }
+       }
+       .results{
+           display: flex;
+           flex-direction: row;
+           justify-content: space-evenly;
+           margin-left: 10px;
+           .label-highscore{
+               padding-right: 20px;
+               
+           }
+       }
+       
+   }
+}
+
+@media (max-width: 576px){
+    .heading{
+        h1{
+            font-size: 30px;
+        }
+        h2{
+            font-size: 50px;
+        }
+    }
+    .controls{
+        margin-top: 0;
+        text-align: center;
+        .left{
+            .input-label{
+                padding-left: 10px;
+            }
+            .guess{
+                height: 60px;
+                width: 160px;
+                font-size: 50px;
+                margin-left: 10px;
+            }
+            .btn{
+                width: 150px;
+                height: 60px;
+                margin-right: 10px;
+            }
+        }
+        .low-high-restart{
+            display: block;
+            .message{
+                padding-top: 0;
+                padding-right: 100px;
+            }
+            .btn{
+                margin-top: 15px;
+                margin-left: -5px;
+            }
+        }
+        .results{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            margin-top: 15px;
+            margin-left: 20px;
+            margin-right: 0;
+            padding-right: 0;
+            padding-left: 0;
+            .label-score{
+                font-size: 21px;
+            }
+            .label-highscore{
+                font-size: 21px;
+            }
+        }
+        
+    }
+}
+
